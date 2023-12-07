@@ -1,0 +1,12 @@
+cinnamon
+gnome-shell
+gnome-terminal
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+metacity
+nemo-fileroller
+--END OF MINIMAL INSTALL--
+blueman
+cinnamon-translations
+
