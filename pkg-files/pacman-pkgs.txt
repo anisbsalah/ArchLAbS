@@ -1,6 +1,7 @@
 xorg
 xorg-apps
 xorg-server
+xorg-xhost
 xorg-xinit
 xorg-xkill
 xorg-xwayland
@@ -19,6 +20,15 @@ noto-fonts-emoji
 terminus-font
 ttf-hack
 usbutils
+wireplumber
+pipewire-jack
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-pulse
+lib32-pipewire
+lib32-pipewire-jack
+pavucontrol
 xdg-user-dirs
 xdg-utils
 --END OF MINIMAL INSTALL--
@@ -61,27 +71,18 @@ alsa-lib
 alsa-plugins
 alsa-utils
 sof-firmware
-wireplumber
-pipewire-jack
-pipewire
-pipewire-alsa
-pipewire-audio
 pipewire-docs
 pipewire-ffado
-pipewire-pulse
 pipewire-roc
 pipewire-v4l2
 pipewire-x11-bell
 pipewire-zeroconf
-lib32-pipewire
-lib32-pipewire-jack
 gst-plugin-pipewire
 gstreamer
 gst-plugins-good
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-ugly
-pavucontrol
 playerctl
 volumeicon
 bluez
@@ -169,7 +170,6 @@ egl-wayland
 evince
 exa
 ffmpegthumbs
-firefox
 fuse2
 fuse3
 fuseiso
@@ -189,7 +189,6 @@ make
 meld
 os-prober
 papirus-icon-theme
-picom
 pkgconf
 python-notify2
 python-psutil
