@@ -244,8 +244,7 @@ timezone() {
 
 	echo "
 System detected your timezone to be '${time_zone}'"
-	echo "
-Is this correct?"
+	echo "Is this correct?"
 
 	options=("Yes" "No")
 	select_option $? 1 "${options[@]}"

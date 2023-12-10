@@ -30,6 +30,7 @@ pacman -S --noconfirm archlinux-keyring # update keyrings to latest to prevent p
 pacman -S --noconfirm --needed gptfdisk btrfs-progs glibc
 pacman -S --noconfirm --needed pacman-contrib terminus-font
 pacman -S --noconfirm --needed reflector
+pacman -S --noconfirm --needed gptfdisk btrfs-progs glibc
 
 timedatectl set-ntp true
 setfont ter-v18b

@@ -31,8 +31,8 @@ echo "
  Setting up mirrors for optimal download
 ====================================================================
 "
-pacman -S --noconfirm --needed curl git pacman-contrib reflector
-pacman -S --noconfirm --needed rsync arch-install-scripts
+pacman -S --noconfirm --needed curl git pacman-contrib reflector rsync
+pacman -S --noconfirm --needed arch-install-scripts
 cp -v /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 nc=$(grep -c ^processor /proc/cpuinfo)
@@ -140,7 +140,7 @@ echo "
 ====================================================================
 "
 # Graphics Drivers find and install
-gpu_type=$(lspci -v | grep -A1 -e VGA -e 3D)
+gpu_type=$(lspci | grep -A1 -e VGA -e 3D)
 if grep -E "NVIDIA|GeForce" <<<"${gpu_type}"; then
 	pacman -S --noconfirm --needed nvidia
 	nvidia-xconfig
@@ -158,7 +158,7 @@ echo "
 ====================================================================
 "
 # Wireless Card Drivers find and install
-wireless_card=$(lspci -v | grep -i network)
+wireless_card=$(lspci | grep -i network)
 if grep -E "Broadcom" <<<"${wireless_card}"; then
 	if grep -E "BCM43" <<<"${wireless_card}"; then
 		pacman -S --noconfirm --needed dkms broadcom-wl-dkms
