@@ -130,7 +130,7 @@ mkdir -p /mnt/boot/efi
 mount -t vfat -L EFIBOOT /mnt/boot
 
 if ! grep -qs '/mnt' /proc/mounts; then
-	echo "Drive is not mounted, can not continue."
+	echo "Drive is not mounted! Can not continue."
 	echo "Rebooting in 3 Seconds ..." && sleep 1
 	echo "Rebooting in 2 Seconds ..." && sleep 1
 	echo "Rebooting in 1 Second ..." && sleep 1
