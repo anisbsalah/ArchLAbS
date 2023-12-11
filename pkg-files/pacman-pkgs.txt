@@ -88,7 +88,6 @@ volumeicon
 bluez
 bluez-libs
 bluez-utils
-bluedevil
 cups
 cups-pdf
 cups-filters

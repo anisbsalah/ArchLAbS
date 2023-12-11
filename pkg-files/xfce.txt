@@ -2,4 +2,5 @@ xfce4
 xfce4-goodies
 sddm
 --END OF MINIMAL INSTALL--
+blueman
 

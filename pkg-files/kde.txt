@@ -6,6 +6,7 @@ sddm
 plasma
 ark
 audiocd-kio
+bluedevil
 dolphin-plugins
 egl-wayland
 extra-cmake-modules
