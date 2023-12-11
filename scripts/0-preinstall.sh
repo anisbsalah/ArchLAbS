@@ -91,7 +91,7 @@ mountallsubvol() {
 	mount -o "${MOUNT_OPTIONS}",subvol=@var "${partition3}" /mnt/var
 }
 
-# @description BTRFS subvolulme creation and mounting.
+# @description BTRFS subvolumes creation and mounting.
 subvolumesetup() {
 	# create nonroot subvolumes
 	createsubvolumes
