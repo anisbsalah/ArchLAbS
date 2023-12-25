@@ -184,18 +184,6 @@ if [[ ${TOTAL_MEM} -lt 8000000 ]]; then
 	fi
 fi
 
-#### This method works for both btrfs and ext4 (from arch wiki)
-#if [[ ${TOTAL_MEM} -lt 8000000 ]]; then
-#	mkdir -p /mnt/swap
-#	truncate -s 0 /mnt/swap/swapfile
-#	chattr +C /mnt/swap/swapfile
-#	fallocate -l 4096M /mnt/swap/swapfile
-#	chmod 0600 /mnt/swap/swapfile
-#	mkswap /mnt/swap/swapfile
-#	swapon /mnt/swap/swapfile
-#	echo "/swap/swapfile	none	swap	defaults	0	0" >>/mnt/etc/fstab
-#fi
-
 #### This method works for both btrfs and ext4 ( from ArchTitus )
 #if [[ ${TOTAL_MEM} -lt 8000000 ]]; then
 #	# Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
@@ -208,6 +196,18 @@ fi
 #	swapon /mnt/swap/swapfile # activate the swap file.
 #	# The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the system itself.
 #	echo "/swap/swapfile	none	swap	defaults	0	0" >>/mnt/etc/fstab # Add swap to fstab, so it KEEPS working after installation.
+#fi
+
+#### This method works for both btrfs and ext4 (from arch wiki)
+#if [[ ${TOTAL_MEM} -lt 8000000 ]]; then
+#	mkdir -p /mnt/swap
+#	truncate -s 0 /mnt/swap/swapfile
+#	chattr +C /mnt/swap/swapfile
+#	fallocate -l 4096M /mnt/swap/swapfile
+#	chmod 0600 /mnt/swap/swapfile
+#	mkswap /mnt/swap/swapfile
+#	swapon /mnt/swap/swapfile
+#	echo "/swap/swapfile	none	swap	defaults	0	0" >>/mnt/etc/fstab
 #fi
 
 echo "

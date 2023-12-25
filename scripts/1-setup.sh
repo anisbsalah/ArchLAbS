@@ -61,15 +61,7 @@ locale-gen
 
 {
 	echo 'LANG=en_US.UTF-8'
-	echo 'LC_ADDRESS=en_US.UTF-8'
-	echo 'LC_IDENTIFICATION=en_US.UTF-8'
-	echo 'LC_MEASUREMENT=en_US.UTF-8'
-	echo 'LC_MONETARY=en_US.UTF-8'
-	echo 'LC_NAME=en_US.UTF-8'
-	echo 'LC_NUMERIC=en_US.UTF-8'
-	echo 'LC_PAPER=en_US.UTF-8'
-	echo 'LC_TELEPHONE=en_US.UTF-8'
-	echo 'LC_TIME=en_US.UTF-8'
+	echo 'LC_TIME=C'
 } >>/etc/locale.conf
 
 # Set console font and keymap

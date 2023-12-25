@@ -6,7 +6,10 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 metacity
 nemo-fileroller
+xed
 --END OF MINIMAL INSTALL--
-blueman
+blueberry
 cinnamon-translations
+gnome-screenshot
+nemo-share
 

@@ -51,14 +51,14 @@ if [[ ${AUR_HELPER} != none ]]; then
 	"pikaur")
 		aur_command="pikaur"
 		;;
+	"pakku")
+		aur_command="pakku"
+		;;
 	"aurman")
 		aur_command="aurman"
 		;;
-	"pacaur")
-		aur_command="pacaur"
-		;;
-	"pakku")
-		aur_command="pakku"
+	"aura")
+		aur_command="sudo aura"
 		;;
 	*) ;;
 	esac
@@ -81,5 +81,6 @@ echo "
                   SYSTEM READY FOR 3-post-setup.sh
 ====================================================================
 "
+sleep 1
 clear
 exit

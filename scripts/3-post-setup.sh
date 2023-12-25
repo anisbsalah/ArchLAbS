@@ -21,7 +21,7 @@ GRUB EFI Bootloader Install & Check
 source "${HOME}/ArchLAbS/configs/setup.conf"
 
 if [[ -d "/sys/firmware/efi" ]]; then
-	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB "${DISK}"
+   grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB "${DISK}"
 fi
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -31,16 +31,16 @@ echo "
 ====================================================================
 "
 if [[ ${DESKTOP_ENV} == "cinnamon" ]]; then
-	systemctl enable lightdm.service
+   systemctl enable lightdm.service
 
 elif [[ ${DESKTOP_ENV} == "gnome" ]]; then
-	systemctl enable gdm.service
+   systemctl enable gdm.service
 
 elif [[ ${DESKTOP_ENV} == "kde" ]]; then
-	systemctl enable sddm.service
+   systemctl enable sddm.service
 
 elif [[ ${DESKTOP_ENV} == "xfce" ]]; then
-	systemctl enable sddm.service
+   systemctl enable sddm.service
 fi
 
 echo "
@@ -95,3 +95,4 @@ cd "$(pwd)" || exit 1
 echo "
 ====================================================================
 "
+sleep 1

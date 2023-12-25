@@ -1,6 +1,7 @@
 plasma-meta
 dolphin
 kate
+konsole
 sddm
 --END OF MINIMAL INSTALL--
 plasma

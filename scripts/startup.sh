@@ -333,7 +333,7 @@ aurhelper() {
 	# Let the user choose AUR helper from predefined list
 	echo "
 Please enter your desired AUR helper:"
-	options=("yay" "yay-bin" "paru" "paru-bin" "trizen" "pikaur" "aurman" "pacaur" "pakku" "none")
+	options=("yay" "yay-bin" "paru" "paru-bin" "trizen" "pikaur" "pakku" "aurman" "aura" "none")
 	select_option $? 1 "${options[@]}"
 	aur_helper=${options[$?]}
 	set_option AUR_HELPER "${aur_helper}"

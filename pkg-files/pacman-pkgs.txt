@@ -54,12 +54,14 @@ networkmanager-openconnect
 networkmanager-openvpn
 networkmanager-qt5
 nfs-utils
+nmap
 nm-connection-editor
 nss-mdns
 ntp
 openbsd-netcat
 openconnect
 openssh
+openvpn
 openresolv
 wireless-regdb
 wireless_tools
@@ -84,7 +86,6 @@ gst-plugins-bad
 gst-plugins-base
 gst-plugins-ugly
 playerctl
-volumeicon
 bluez
 bluez-libs
 bluez-utils
@@ -104,8 +105,6 @@ gutenprint
 gtk3-print-backends
 libcups
 system-config-printer
-sane
-skanlite
 acpi
 acpid
 acpi_call
@@ -132,6 +131,7 @@ mtpfs
 nfs-utils
 nilfs-utils
 ntfs-3g
+os-prober
 partclone
 partimage
 p7zip
@@ -158,7 +158,7 @@ ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 alacritty
-arc-kde
+arc-gtk-theme
 autoconf
 automake
 bison
@@ -199,6 +199,7 @@ rofi
 telegram-desktop
 vlc
 which
+zenity
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
