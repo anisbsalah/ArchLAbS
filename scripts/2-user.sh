@@ -15,29 +15,38 @@ echo "
                    Automated Arch Linux Installer
 ====================================================================
 "
+echo "[*] source ${HOME}/ArchLAbS/configs/setup.conf ..."
 source "${HOME}/ArchLAbS/configs/setup.conf"
 
 uppercase_desktopenv=$(printf "%s" "${DESKTOP_ENV}" | tr '[:lower:]' '[:upper:]')
-echo "[*] Installing ${uppercase_desktopenv} Desktop Environment..."
+echo "
+==============================================================================
+ Installing ${uppercase_desktopenv} Desktop Environment
+==============================================================================
+"
 cd ~ || exit 1
-
 sed -n '/'${INSTALL_TYPE}'/q;p' ~/ArchLAbS/pkg-files/"${DESKTOP_ENV}".txt | while read line; do
 	if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]; then
 		# If selected installation type is FULL, skip the --END OF THE MINIMAL INSTALLATION-- line
 		continue
 	fi
-	echo "INSTALLING: ${line}"
+	echo "[*] INSTALLING: ${line} ..."
 	sudo pacman -S --noconfirm --needed "${line}"
 done
 
 if [[ ${AUR_HELPER} != none ]]; then
-	echo "[*] Installing AUR Helper..."
+	echo "
+==============================================================================
+ Installing AUR Helper: '${AUR_HELPER}'
+==============================================================================
+"
 	(
 		cd ~ || exit 1
 		git clone "https://aur.archlinux.org/${AUR_HELPER}.git"
 		cd ~/"${AUR_HELPER}" || exit 1
 		makepkg -si --noconfirm --needed
 	)
+
 	case ${AUR_HELPER} in
 	"yay" | "yay-bin")
 		aur_command="yay"
@@ -63,7 +72,11 @@ if [[ ${AUR_HELPER} != none ]]; then
 	*) ;;
 	esac
 
-	echo "[*] Installing AUR packages..."
+	echo "
+==============================================================================
+ Installing AUR Packages
+==============================================================================
+"
 	# sed $INSTALL_TYPE is using install type to check for MINIMAL installation, if it's true, stop
 	# stop the script and move on, not installing any more packages below that line
 	sed -n '/'${INSTALL_TYPE}'/q;p' ~/ArchLAbS/pkg-files/aur-pkgs.txt | while read line; do
@@ -71,10 +84,27 @@ if [[ ${AUR_HELPER} != none ]]; then
 			# If selected installation type is FULL, skip the --END OF THE MINIMAL INSTALLATION-- line
 			continue
 		fi
-		echo "INSTALLING: ${line}"
+		echo "[*] INSTALLING: ${line} ..."
 		"${aur_command}" -S --noconfirm --needed "${line}"
 	done
 fi
+
+echo "
+==============================================================================
+ Xorg/Keyboard configuration
+==============================================================================
+"
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo tee -a /etc/X11/xorg.conf.d/00-keyboard.conf <<EOF
+# Written by systemd-localed(8), read by systemd-localed and Xorg. It's
+# probably wise not to edit this file manually. Use localectl(1) to
+# update this file.
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "${KEYMAP}"
+EndSection
+EOF
 
 echo "
 ====================================================================
