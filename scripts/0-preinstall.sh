@@ -167,6 +167,8 @@ echo "
  Checking for low memory systems <8G
 ====================================================================
 "
+# TOTAL_MEM=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+# SWAPFILE_SIZE=$(free -m -t | awk 'NR == 2 {print $2}') # Equal to ram size (in MiB)
 TOTAL_MEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
 if [[ ${TOTAL_MEM} -lt 8000000 ]]; then
 	# Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
