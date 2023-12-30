@@ -1,5 +1,7 @@
 --END OF MINIMAL INSTALL--
 archlinux-tweak-tool-git
 brave-bin
+hardcode-fixer-git
 librewolf-bin
+vscodium-bin
 

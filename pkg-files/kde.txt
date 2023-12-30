@@ -1,16 +1,16 @@
 plasma-meta
 dolphin
+dolphin-plugins
 kate
 konsole
 sddm
 --END OF MINIMAL INSTALL--
-plasma
 ark
 audiocd-kio
 bluedevil
-dolphin-plugins
-egl-wayland
 extra-cmake-modules
+ffmpegthumbs
+ghostwriter
 gwenview
 kate
 kcodecs5
@@ -23,7 +23,7 @@ kdialog
 kimageformats5
 kinit
 kio-fuse
-konsole
+kompare
 ksysguard
 networkmanager-qt5
 okular
@@ -35,5 +35,6 @@ solid5
 spectacle
 svgpart
 xsettingsd
+xwaylandvideobridge
 yakuake
 
