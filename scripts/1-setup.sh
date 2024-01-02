@@ -35,8 +35,7 @@ pacman -S --noconfirm --needed curl git pacman-contrib reflector rsync
 pacman -S --noconfirm --needed arch-install-scripts
 cp -v /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
-nc=$(grep -c ^processor /proc/cpuinfo)
-
+nc=$(grep -c ^processor /proc/cpuinfo) # nc=$(nproc)
 echo "
 ====================================================================
  You have ${nc} cores. And changing the makeflags for ${nc} cores.

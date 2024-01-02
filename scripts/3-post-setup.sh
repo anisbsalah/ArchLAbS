@@ -30,18 +30,12 @@ echo "
  Enabling Login Display Manager
 ====================================================================
 "
-if [[ ${DESKTOP_ENV} == "cinnamon" ]]; then
-   systemctl enable lightdm.service
-
-elif [[ ${DESKTOP_ENV} == "gnome" ]]; then
-   systemctl enable gdm.service
-
-elif [[ ${DESKTOP_ENV} == "kde" ]]; then
-   systemctl enable sddm.service
-
-elif [[ ${DESKTOP_ENV} == "xfce" ]]; then
-   systemctl enable sddm.service
-fi
+case ${DESKTOP_ENV} in
+"cinnamon" | "xfce") systemctl enable lightdm.service ;;
+"gnome") systemctl enable gdm.service ;;
+"kde") systemctl enable sddm.service ;;
+*) ;;
+esac
 
 echo "
 ====================================================================
@@ -86,6 +80,7 @@ sed -i 's/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL/# %wheel ALL=(ALL:ALL) NOPASSWD: A
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
+# Remove project folder
 rm -r "${HOME}/ArchLAbS"
 rm -r "/home/${USERNAME}/ArchLAbS"
 

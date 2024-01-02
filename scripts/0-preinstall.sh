@@ -26,7 +26,7 @@ echo "
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i 's/^#Color/Color\nILoveCandy/' /etc/pacman.conf
 
-pacman -Sy --noconfirm archlinux-keyring # update keyrings to latest to prevent packages failing to install
+pacman -S --noconfirm archlinux-keyring # update keyrings to latest to prevent packages failing to install
 pacman -S --noconfirm --needed gptfdisk btrfs-progs glibc
 pacman -S --noconfirm --needed pacman-contrib reflector
 pacman -S --noconfirm --needed terminus-font
